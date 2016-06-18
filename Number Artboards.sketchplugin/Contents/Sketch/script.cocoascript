@@ -9,7 +9,9 @@ var number = function(context) {
         for (var i = 0; i < selectedCount; i++) {
             var layer = selectedLayers[i];
             var layerNameSplit = layer.name().split(": ");
-            layerNameSplit.shift();
+            if (layerNameSplit.length > 1) {
+                layerNameSplit.shift();
+            }
             var newLayerName = layerNameSplit.join("");
             layer.setName((selectedCount - i) + ": " + newLayerName);
         }
