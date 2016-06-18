@@ -1,0 +1,36 @@
+var number = function(context) {
+    log("Numbering----------------");
+    var selectedLayers = context.selection;
+    var selectedCount = selectedLayers.count();
+
+    if (selectedCount == 0) {
+        log('No layers are selected.');
+    } else {
+        for (var i = 0; i < selectedCount; i++) {
+            var layer = selectedLayers[i];
+            var layerNameSplit = layer.name().split(": ");
+            layerNameSplit.shift();
+            var newLayerName = layerNameSplit.join("");
+            layer.setName((selectedCount - i) + ": " + newLayerName);
+        }
+    }
+};
+
+//Generally don't use, will clear the text before the first '-' in a name Ex. 21-hello-hi = hello-hi
+var clear = function (context) {
+    log("Clearing----------------");
+    var selectedLayers = context.selection;
+    var selectedCount = selectedLayers.count();
+
+    if (selectedCount == 0) {
+        log('No layers are selected.');
+    } else {
+        log('Selected layers:');
+        for (var i = 0; i < selectedCount; i++) {
+            var layer = selectedLayers[i];
+            var splitName = layer.name().split('-');
+            splitName.shift();
+            layer.setName(splitName.join("-"));
+        }
+    }
+};

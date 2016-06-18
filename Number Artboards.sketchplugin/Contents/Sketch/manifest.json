@@ -1,0 +1,34 @@
+{
+  "author" : "Steven Raden",
+  "commands" : [
+    {
+        "script" : "script.cocoascript",
+        "name" : "Number",
+        "handlers" : {
+            "run" : "number"
+        },
+        "identifier" : "Number",
+        "shortcut": "cmd ctrl 1"
+    },
+    {
+        "script" : "script.cocoascript",
+        "name" : "Clear",
+        "handlers" : {
+            "run" : "clear"
+        },
+        "identifier" : "Clear"
+    }
+  ],
+  "menu" : {
+    "title" : "Number Artboards",
+    "items" : [
+      "Number",
+      "Clear"
+    ]
+  },
+  "identifier" : "com.example.sketch.3518bee6-2ecb-4b62-99ae-f1770a003ccc",
+  "version" : "1.0",
+  "description" : "",
+  "authorEmail" : "",
+  "name" : "Number Artboards"
+}
