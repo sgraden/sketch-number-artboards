@@ -12,6 +12,22 @@
     },
     {
         "script" : "script.cocoascript",
+        "name" : "noSync",
+        "handlers" : {
+            "run" : "noSync"
+        },
+        "identifier" : "Don't Sync"
+    },
+    {
+        "script" : "script.cocoascript",
+        "name" : "sync",
+        "handlers" : {
+            "run" : "sync"
+        },
+        "identifier" : "Set to Sync"
+    },
+    {
+        "script" : "script.cocoascript",
         "name" : "Clear",
         "handlers" : {
             "run" : "clear"
@@ -20,10 +36,12 @@
     }
   ],
   "menu" : {
-    "title" : "Number Artboards",
+    "title" : "Invision Artboards",
     "items" : [
       "Number",
-      "Clear"
+      "Clear",
+      "Set to Sync",
+      "Don't Sync"
     ]
   },
   "identifier" : "com.example.sketch.3518bee6-2ecb-4b62-99ae-f1770a003ccc",

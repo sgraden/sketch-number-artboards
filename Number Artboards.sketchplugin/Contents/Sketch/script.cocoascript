@@ -36,3 +36,38 @@ var clear = function (context) {
         }
     }
 };
+
+var noSync = function (context) {
+    log("-----Marking for not syncing-----");
+
+    var selectedLayers = context.selection;
+    var selectedCount = selectedLayers.count();
+    if (selectedCount == 0) {
+        log('No layers are selected.');
+    } else {
+        log('Layers Selected');
+        for (var i = 0; i < selectedCount; i++) {
+            var layer = selectedLayers[i];
+            var markedName = '-' + layer.name();
+            layer.setName(markedName);
+        }
+    }
+};
+
+var sync = function (context) {
+    log("-----Marking for syncing-----");
+
+    var selectedLayers = context.selection;
+    var selectedCount = selectedLayers.count();
+    if (selectedCount == 0) {
+        log('No layers are selected.');
+    } else {
+        log('Layers Selected');
+
+        for (var i = 0; i < selectedCount; i++) {
+            var layer = selectedLayers[i];
+            var modifiedName = layer.name().replace(/^-*/, "");
+            layer.setName(modifiedName);
+        }
+    }
+};
